@@ -1,0 +1,40 @@
+program num67d;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+label end_if, write0;
+
+var
+    N,res: word;
+
+begin
+    Write('Enter N <= 100 and N >= 10, N = ');
+    readln(N);
+
+    asm
+                mov dx, 0
+                mov ax, [N]  // AX := N
+                cmp ax, 100
+                je write0    // JE -> "="
+                ja end_if    // JA -> ">"
+                cmp ax, 10
+                jb end_if    // JB -> "<"
+                mov bx, 10
+                div bx
+                mov res, ax
+                jmp end_if
+
+        write0:
+                mov res, 0
+                jmp end_if
+
+        end_if:
+
+    end;
+
+    write(res);
+    readln;
+end.
