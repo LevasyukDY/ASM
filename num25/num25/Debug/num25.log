@@ -1,0 +1,3 @@
+﻿  num25.cpp
+E:\.STUDY\ASM\num25\num25\num25.cpp(10,11): warning C4101:  S: неиспользованная локальная переменная
+  num25.vcxproj -> E:\.STUDY\ASM\num25\Debug\num25.exe
